@@ -1,0 +1,18 @@
+title: Article
+fields:
+  -
+    handle: article
+    field:
+      type: bard
+      sets:
+        text_layout:
+          display: 'Text & Layout'
+          sets:
+            pull_quote:
+              display: 'Pull Quote'
+              fields:
+                -
+                  import: pull_quote
+        media:
+          display: Media
+          sets: {  }

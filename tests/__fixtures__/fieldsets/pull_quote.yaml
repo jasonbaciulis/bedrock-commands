@@ -1,0 +1,6 @@
+title: 'Pull Quote'
+fields:
+  -
+    handle: quote
+    field:
+      type: textarea

@@ -1,0 +1,18 @@
+title: Blocks
+fields:
+  -
+    handle: blocks
+    field:
+      type: replicator
+      sets:
+        messaging:
+          display: Messaging
+          sets:
+            steps:
+              display: 'Steps'
+              fields:
+                -
+                  import: steps
+        conversion:
+          display: Conversion
+          sets: {  }

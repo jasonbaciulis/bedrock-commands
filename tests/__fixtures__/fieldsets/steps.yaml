@@ -1,0 +1,6 @@
+title: Steps
+fields:
+  -
+    handle: title
+    field:
+      type: text

@@ -1,0 +1,83 @@
+{
+    "name": "jasonbaciulis/bedrock-commands",
+    "description": "Artisan commands that scaffold, rename and delete page builder blocks and article sets in the Bedrock starter kit",
+    "type": "statamic-addon",
+    "license": "MIT",
+    "keywords": [
+        "statamic",
+        "bedrock",
+        "scaffold"
+    ],
+    "homepage": "https://github.com/jasonbaciulis/bedrock-commands",
+    "authors": [
+        {
+            "name": "Jason Baciulis",
+            "email": "jason@remarkable.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "statamic/cms": "^6.34.1"
+    },
+    "require-dev": {
+        "driftingly/rector-laravel": "^2.6.2",
+        "larastan/larastan": "^3.12.2",
+        "laravel/pint": "^1.32.1",
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^5.2.1",
+        "pestphp/pest-plugin-laravel": "^5.0.1",
+        "pestphp/pest-plugin-phpstan": "^5.2.1",
+        "pestphp/pest-plugin-rector": "^5.0.4",
+        "pestphp/pest-plugin-type-coverage": "^5.0.2",
+        "phpstan/phpstan": "^2.2.15",
+        "phpunit/phpunit": "^13.3.4",
+        "rector/rector": "^2.6.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bedrock\\Commands\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bedrock\\Commands\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Bedrock Commands",
+            "slug": "bedrock-commands",
+            "description": "Scaffold, rename and delete Bedrock blocks and sets"
+        },
+        "laravel": {
+            "providers": [
+                "Bedrock\\Commands\\ServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "lint": [
+            "rector",
+            "pint --parallel"
+        ],
+        "test:lint": [
+            "pint --parallel --test",
+            "rector --dry-run"
+        ],
+        "test:type-coverage": "pest --type-coverage --min=100",
+        "test:types": "phpstan",
+        "test:unit": "XDEBUG_MODE=\"coverage\" pest --parallel --coverage --exactly=100.0",
+        "test": [
+            "@test:lint",
+            "@test:type-coverage",
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
