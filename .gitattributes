@@ -1,6 +1,7 @@
 * text=auto eol=lf
 
 # Keep the Composer dist archive to the code that a project runs.
+/.claude export-ignore
 /.github export-ignore
 /tests export-ignore
 /.gitattributes export-ignore
